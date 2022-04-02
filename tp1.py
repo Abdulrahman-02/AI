@@ -1,4 +1,6 @@
 import random
+import numpy as np
+import matplotlib.pyplot as plt
 
 """part1:listes"""
 # generate a list of random numbers 
@@ -111,5 +113,34 @@ dup = duplicated(myList)
 myDict = generate_dict(myList)
 print(myDict)
 print(count_odd_duplicated(myDict))
+
+# test part3
+list1 = generate_list(0, 100, 15)
+list2 = generate_list(0, 100, 15)
+
+# convert a list to an array
+arr1 = np.array(list1)
+arr2 = np.array(list2)
+print("vect1 = " + str(arr1))
+print("vect2 = " + str(arr2))
+# sum of the arrays
+myArray = np.add(arr1,arr2)
+print("La somme des deux vecteurs est: " + str(myArray))
+# construct an array by repeating A number of times given
+mat = np.tile(arr1,(10,1))
+print("dimension de la matrice est: " + str(mat.shape))
+print(mat)
+# multiplication
+produit = np.matmul(mat,arr1)
+print("Le produit = " + str(produit))
+print("La demision du resultat = " + str(produit.shape))
+
+# part3
+arr1.sort()
+fig, axe = plt.subplots()
+fig.suptitle("Ma courbe des nombres aléatoires")
+axe.plot(range(0,len(arr1)),arr1)
+axe.set_ylabel("Mes valeurs aléatoires")
+plt.show()
 
 
