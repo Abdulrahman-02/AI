@@ -3,17 +3,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 """part1:listes"""
-# generate a list of random numbers 
-def generate_list(min=0,max=10,count=10):
+# generate a list of random numbers
+def generate_list(min=0,max=10,count=20):
     numList = []
     for i in range(0,count):
         n = random.randrange(min,max)
         numList.append(n)
     return numList
- 
+
 # generate a set from a list without duplication
 def unique(list=[]):
-    return set(list) 
+    return set(list)
 
 # check duplicates
 def check_duplicates(list=[]):
@@ -21,7 +21,7 @@ def check_duplicates(list=[]):
         print("contains duplicates")
     else:
         print("no duplicates")
-        
+
 # generate a set from a list "only duplicated numbers"
 def get_duplicates(list=[]):
     duplicate = []
@@ -32,7 +32,7 @@ def get_duplicates(list=[]):
         else:
             duplicate.append(i)
     return set(duplicate)
-    
+
 """part2:dictionnaires"""
 
 # int list to string list
@@ -142,5 +142,3 @@ fig.suptitle("Ma courbe des nombres aléatoires")
 axe.plot(range(0,len(arr1)),arr1)
 axe.set_ylabel("Mes valeurs aléatoires")
 plt.show()
-
-
